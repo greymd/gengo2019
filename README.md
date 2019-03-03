@@ -84,6 +84,10 @@ $ cat filtered3 | grep -vf ng_kanjis2 > filtered4
 gshuf filtered4 | nl -nln > shuf_filtered4
 ```
 
+### スクリプト
+
+[t](https://github.com/sferik/t) を利用したスクリプトである gengo2019.sh を用意。
+
 ## 25 日間につぶやけるか ?
 
 9000 windows 存在 (1 window = 15 分)
