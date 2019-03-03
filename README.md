@@ -84,13 +84,13 @@ $ cat filtered3 | grep -vf ng_kanjis2 > filtered4
 gshuf filtered4 | nl -nln > shuf_filtered4
 ```
 
-## 20 日間につぶやけるか ?
+## 25 日間につぶやけるか ?
 
-There are 7200 windows (15 minute intervals)
+9000 windows 存在 (1 window = 15 分)
 
 ```
-$ echo '20*24*15' | bc -l
-7200
+$ echo '25*24*15' | bc -l
+9000
 ```
 
 API 制限は [300 per window](https://developer.twitter.com/en/docs/basics/rate-limits.html).
@@ -105,3 +105,5 @@ $ wc -l filtered4
 $ echo 1726465/9000 | bc -l
 191.82944444444444444444
 ```
+
+なんとかいける？
