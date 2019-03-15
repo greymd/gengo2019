@@ -1,5 +1,9 @@
 # gengo2019
 
+### Background
+
+常用漢字の組み合わせ全部列挙してつぶやいて、新元号公開されたあと、正解以外のツイート全部消せば予知能力者じゃんｗｗｗ俺天才ｗｗｗｗ
+
 ### 1. `moreutils` をインストールする
 
 ### 2. 組み合わせを作る
@@ -78,36 +82,31 @@ $ cat filtered2 | mecab | awk '/EOS/{if(count > 1){print gen};gen="";count=0}!/E
 $ cat filtered3 | grep -vf ng_kanjis2 > filtered4
 ```
 
-### ランダム化する
+### 8. ランダム化する
 
 ```
 gshuf filtered4 | nl -nln > shuf_filtered4
 ```
 
-### スクリプト
+### 9. スクリプトを実行する
 
-[t](https://github.com/sferik/t) を利用したスクリプトである gengo2019.sh を用意。
+[tweet.sh](https://github.com/piroor/tweet.sh) を利用したスクリプトである gengo2019.sh を用意。
 
-## 25 日間につぶやけるか ?
-
-9000 windows 存在 (1 window = 15 分)
+### 10. 実行
 
 ```
-$ echo '25*24*15' | bc -l
-9000
+$ nohup bash ./gengo2019.sh &
 ```
 
-API 制限は [300 per window](https://developer.twitter.com/en/docs/basics/rate-limits.html).
+### 11. API 制限常にギリギリなのでツイ禁状態
 
-余裕をもって15分に250投稿とする。
-3秒に1回は投稿したい。
+### 結果: 耐えられず終わり
 
 ```
-$ wc -l filtered4
- 1726465 filtered4
 
-$ echo 1726465/9000 | bc -l
-191.82944444444444444444
+                              糸冬
+                      --------------------
+                        制作・著作 ＮＨＫ
+
 ```
-
-なんとかいける？
+From [owari](https://github.com/xztaityozx/owari)
